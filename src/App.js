@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <h1>Welcome to My App</h1>
+        <h1>반갑습니다! 로그인을 해주세요!</h1>
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path='/signup' element={<SignupPage />}/>

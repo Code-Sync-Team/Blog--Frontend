@@ -13,7 +13,15 @@ export const login = async(credentials) => {
         throw error;
       }
 }
-
+export const checkEmailDuplicate = async (email) => {
+    try {
+      const response = await axios.post(`${API_URL}/api/v1/user/email/check`, { email });
+      return response.data;
+    } catch (error) {
+      console.error('이메일 중복 확인 오류', error);
+      throw error;
+    }
+  };
 export const signup = async(credentials) => {
     try {
         const response = await axios.post(`${API_URL}/api/v1/user/join`,credentials);
