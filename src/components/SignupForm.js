@@ -8,6 +8,7 @@ const SignupForm = ({ credentials, setCredentials, onSignup, onCheckEmailDuplica
   const [emailError, setEmailError] = useState('');
   const [isEmailChecked, setIsEmailChecked] = useState(false); // 이메일 중복 확인 여부 상태
   
+
   // 비밀번호 유효성 검사 함수
   const validatePassword = (password) => {
     const hasLetter = /[a-zA-Z]/.test(password);
@@ -109,6 +110,7 @@ const SignupForm = ({ credentials, setCredentials, onSignup, onCheckEmailDuplica
     } else if (isEmailDuplicate === true) {
       alert('사용중인 이메일입니다.');
     }
+    onSignup();
   };
 
   return (
@@ -127,7 +129,7 @@ const SignupForm = ({ credentials, setCredentials, onSignup, onCheckEmailDuplica
           placeholder="이메일"
         />
         <button 
-          type="button" 
+          type="button" className='emailduplicate'
           onClick={handleCheckEmailDuplicate} 
           disabled={isChecking}
         >

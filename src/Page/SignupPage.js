@@ -15,6 +15,7 @@ const SignupPage = () => {
       await signup(credentials);
       setIsSignupSuccessful(true);
     } catch (err) {
+      console.log('회원가입실패',err);
       setError('회원가입에 실패했습니다. 다시 시도해 주세요.');
     }
   };
@@ -27,7 +28,6 @@ const SignupPage = () => {
       setIsEmailDuplicate(response.isDuplicate);  // 응답에 따라 상태 설정
       setError(response.isDuplicate ? '이메일이 이미 사용 중입니다.' : '');
     } catch (err) {
-      console.error('이메일 중복 확인 오류:', err);
       setError('이메일 중복 확인에 실패했습니다.');
     } finally {
       setIsChecking(false);
