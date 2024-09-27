@@ -2,6 +2,20 @@ import axios from 'axios';
 
 const API_URL = 'http://15.165.121.152:8080';
 
+// 이미지 업로드 이메일 호출
+// 이미지 업로드 API 호출
+export const uploadImage = (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+  
+    return axios.post(`${API_URL}/api/v1/image`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  };
+
+
 export const login = async(credentials) => {
     try {
         const response = await axios.post(`${API_URL}/api/v1/user/login`, credentials);

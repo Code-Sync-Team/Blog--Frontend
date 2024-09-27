@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import '../Styles/index.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
 
 const LoginPage = () => {
   const [isLoginSuccessful, setIsLoginSuccessful] = useState(false);
   const [loginMessage, setLoginMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (email, password) => {
     try {
@@ -14,7 +15,7 @@ const LoginPage = () => {
       console.log('비밀번호:', password);
 
       setIsLoginSuccessful(true);
-      setLoginMessage('로그인에 성공했습니다!');
+      navigate('/imageup');
     } catch (err) {
       console.error('로그인 실패', err);
       setLoginMessage('로그인에 실패했습니다. 다시 시도해 주세요.');
