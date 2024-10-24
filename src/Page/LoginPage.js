@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/index.css';
 import { Link, useNavigate } from 'react-router-dom';
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/LoginForm'; 
 
 const LoginPage = () => {
   const [isLoginSuccessful, setIsLoginSuccessful] = useState(false);
@@ -15,7 +15,7 @@ const LoginPage = () => {
       console.log('비밀번호:', password);
 
       setIsLoginSuccessful(true);
-      navigate('/imageup');
+      navigate('/boardList');
     } catch (err) {
       console.error('로그인 실패', err);
       setLoginMessage('로그인에 실패했습니다. 다시 시도해 주세요.');

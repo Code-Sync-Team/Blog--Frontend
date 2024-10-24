@@ -86,3 +86,19 @@ body{
   }
   
 
+  .editor-container {
+    width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞추기 */
+    height: auto; /* 높이는 자동으로 설정 */
+    min-height: 300px; /* 최소 높이 지정 */
+  }
+
+  .board-mode {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
