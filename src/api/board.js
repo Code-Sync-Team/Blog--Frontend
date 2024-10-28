@@ -27,3 +27,14 @@ export const deletePost = async(id) => {
     await axios.delete(`${API_URL}/api/boards/{boardId}`)
 }
 
+// 이미지 업로드 API 호출
+export const uploadImage = (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+  
+    return axios.post(`${API_URL}/api/v1/image`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  };
